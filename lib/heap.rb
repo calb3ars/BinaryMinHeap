@@ -10,7 +10,10 @@ class BinaryMinHeap
   end
 
   def extract
-
+    BinaryMinHeap.swap(@store,0, count)
+    # min = @store.last
+    BinaryMinHeap.heapify_down(@store, 0, count)
+    @store.pop
   end
 
   def peek
@@ -56,7 +59,7 @@ class BinaryMinHeap
         break
       end
     end
-    return array
+    array
   end
 
   def self.swap(arr, idx_1, idx_2)
