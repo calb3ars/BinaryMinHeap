@@ -12,7 +12,9 @@ class BinaryMinHeap
   def extract
     BinaryMinHeap.swap(@store,0, count)
     # min = @store.last
-    BinaryMinHeap.heapify_down(@store, 0, count)
+    if count > 1
+      BinaryMinHeap.heapify_down(@store, 0, count)
+    end
     @store.pop
   end
 
